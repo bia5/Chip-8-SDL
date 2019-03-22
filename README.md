@@ -1,8 +1,9 @@
 # Chip-8-SDL
-I'll add more to this later... probably anyways.
+Note: I'll add more to this later hopefully.
 
 What's being used:
-  SDL2, C++
+  - SDL2
+  - C++
 
 What's working:
   - Video
