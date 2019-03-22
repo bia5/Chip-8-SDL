@@ -66,10 +66,6 @@ int main(int argc, char* args[]) {
 		}
 		
 		myChip8->emulateCycle();
-		
-		if(myChip8->drawFlag) {
-			SDL_UpdateTexture(texture, NULL, myChip8->pixels, 64 * sizeof(Uint32));
-		}
 
 		if(myChip8->sound) {
 			int success = SDL_QueueAudio(deviceId, wavBuffer, wavLength);
@@ -77,9 +73,12 @@ int main(int argc, char* args[]) {
 			myChip8->sound = false;
 		}
 		
-		SDL_RenderClear(renderer);
-		SDL_RenderCopy(renderer, texture, NULL, NULL);
-		SDL_RenderPresent(renderer);
+		if(myChip8->drawFlag) {
+			SDL_UpdateTexture(texture, NULL, myChip8->pixels, 64 * sizeof(Uint32));
+			SDL_RenderClear(renderer);
+			SDL_RenderCopy(renderer, texture, NULL, NULL);
+			SDL_RenderPresent(renderer);
+		}
 		SDL_Delay(2); //"vsync"
 	}
 
