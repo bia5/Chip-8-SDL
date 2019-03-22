@@ -8,6 +8,7 @@ What's working:
   - Video
   - Audio
   - Input
+  
 What's "not working":
   - A proper sync
   - The max volume on the sound (rip ears)
