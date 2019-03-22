@@ -26,6 +26,7 @@ int main(int argc, char* args[]) {
 	SDL_Texture*				texture;
 	SDL_Event						event;
 	SDL_AudioSpec				wavSpec;
+	SDL_AudioDeviceID 	deviceId;
 	Uint32							wavLength;
 	Uint8*							wavBuffer;
 	
