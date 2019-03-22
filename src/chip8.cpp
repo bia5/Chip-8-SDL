@@ -64,7 +64,7 @@ void chip8::emulateCycle() {
 					break;
 
 				case 0x000E: // 0x00EE: Returns from subroutine
-					--sp;			
+					sp--;			
 					pc = stack[sp];					
 					pc += 2;		
 					break;
@@ -81,7 +81,7 @@ void chip8::emulateCycle() {
 
 		case 0x2000: // 0x2NNN: Calls subroutine at NNN.
 			stack[sp] = pc;			
-			++sp;					
+			sp++;					
 			pc = opcode & 0x0FFF;	
 			break;
 		
@@ -339,12 +339,12 @@ void chip8::emulateCycle() {
 	}	
 
 	if(delay_timer > 0)
-		--delay_timer;
+		delay_timer--;
 
 	if(sound_timer > 0) {
 		if(sound_timer == 1)
 			sound = true;
-		--sound_timer;
+		sound_timer--;
 	} 
 }
 

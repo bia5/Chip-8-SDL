@@ -79,7 +79,7 @@ int main(int argc, char* args[]) {
 			SDL_RenderCopy(renderer, texture, NULL, NULL);
 			SDL_RenderPresent(renderer);
 		}
-		SDL_Delay(2); //"vsync"
+		SDL_Delay(15); //"vsync"
 	}
 
 	SDL_CloseAudioDevice(deviceId);
