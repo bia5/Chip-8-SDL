@@ -1,3 +1,6 @@
+# Whats Different:
+Same thing, but with horrible multiplayer support! :D
+
 # Chip-8-SDL
 Note: I'll add more to this later hopefully.
 
