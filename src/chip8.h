@@ -1,8 +1,10 @@
 #pragma once
 #include "SDL2/SDL.h"
-#include <iostream>
 
-using namespace std;
+#include <iostream>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 class chip8 {
 	
@@ -12,15 +14,15 @@ class chip8 {
 		
 		bool drawFlag;
 
-		void emulateCycle();
+		std::string emulateCycle();
 		bool load(const char*);		
 		void init();
 		
 		Uint32 *pixels;
 		unsigned char  key[16];	
 		bool sound;
+		bool autoOpcode = true;
 
-	private:	
 		unsigned short pc;				// Program counter
 		unsigned short opcode;			// Current opcode
 		unsigned short I;				// Index register
